@@ -1,0 +1,24 @@
+{
+  "name": "quantum-metric-code-challenge",
+  "version": "1.0.0",
+  "description": "predicate builder",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soph915/quantum-metric-code-challenge.git"
+  },
+  "author": "soph915",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soph915/quantum-metric-code-challenge/issues"
+  },
+  "homepage": "https://github.com/soph915/quantum-metric-code-challenge#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "react": "^16.5.2"
+  }
+}
