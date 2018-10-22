@@ -15,7 +15,9 @@ app.listen(3000, function() {
 
 app.get('/query', function (req, res) {
   let queries = req.query.queries
-  res.send(helpers.convertToSql(queries))
+  let sqlQueryString = helpers.convertToSql(queries)
+  console.log(sqlQueryString)
+  res.send(sqlQueryString)
 
 });
 

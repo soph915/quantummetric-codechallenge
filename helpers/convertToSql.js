@@ -37,7 +37,6 @@ function numInputToSql(input) {
 
 //todo: in list, not in list, contains all, range 
 
-//todo: deleted/inactive queries
 
 function convertToSql(queries) {
     let output = 'SELECT * FROM session WHERE '
