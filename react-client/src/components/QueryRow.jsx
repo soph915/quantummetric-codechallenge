@@ -19,7 +19,7 @@ class QueryRow extends React.Component {
   }
 
   updateEvent(event) {
-    this.setState({ [event.target.name]: event.target.value });
+    this.setState({ [event.name]: event.value });
   }
 
   render() {
@@ -38,8 +38,9 @@ class QueryRow extends React.Component {
       return (
         <div className="query-row">
 
-          <div onClick={() => { this.props.removeFromQueries(this.props.id); this.deleteRow() }}>
-            <button> Delete</button>
+          <div className="delete-button" 
+            onClick={() => { this.props.removeFromQueries(this.props.id); this.deleteRow() }}>
+            <button > - </button>
           </div>
           <EventSelection id={this.props.id} updateEvent={this.updateEvent} updateState={this.props.updateState}/>
           {predicateOptions}

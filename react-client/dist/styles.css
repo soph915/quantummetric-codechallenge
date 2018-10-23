@@ -50,6 +50,7 @@ header {
 
 .and-button button {
     margin-top:30px;
+    margin-bottom: 20px;
     background: #66C5E8;
     color: white;
     width: 85px;
@@ -59,6 +60,20 @@ header {
     font-size: 10pt;
 }
 
+.delete-button button {
+  background: white;
+  color: gray;
+  width: 20px;
+  height: 20px;
+  border: solid 1px white;
+  border-radius:3px;
+  font-size: 10pt;
+}
+
+.select-style {
+  width:140px;
+  height: 30px;
+}
 
 
 .search-button {
@@ -75,3 +90,4 @@ header {
     border: solid 1px #66C5E8;
     border-radius: 3px;
     font-size: 10pt;
+  }

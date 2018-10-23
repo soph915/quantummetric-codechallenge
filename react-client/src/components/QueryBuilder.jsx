@@ -48,7 +48,11 @@ class QueryBuilder extends React.Component {
     if (!currentQueries[id]) {
       currentQueries[id] = {}
     }
-    currentQueries[id][event.target.name]= event.target.value;
+    if (event.target) {
+      currentQueries[id][event.target.name]= event.target.value;
+    } else {
+      currentQueries[id][event.name]= event.value;
+    }
     this.setState({queries:currentQueries})
   }
 

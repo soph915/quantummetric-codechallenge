@@ -10,30 +10,36 @@ var sqlComparisons = {
   greater_than_or_equal: ['>=', numInputToSql],
   equals: ['=', numInputToSql],
   does_not_equal: ['!=', numInputToSql],
+  in_list: ['IN', inListToSql],
+  not_in_list: ['NOT IN', inListToSql],
   range: 'BETWEEN',
 }
 
 function startsWithToSql(input) {
-  return("'" + input + "%'")
+  return "'" + input + "%'"
 }
 
 function containsToSql(input) {
-  return("'%" + input + "%'") 
+  return "'%" + input + "%'" 
 }
 
 function equalsToSql(input) {
-  return("'" + input + "'") 
+  return "'" + input + "'"
 }
 
 function equalsToSql(input) {
-  return("'" + input + "'") 
+  return "'" + input + "'"
 }
 
 function numInputToSql(input) {
   return Number(input) 
 }
 
-//todo: char vs. vs, char wil' need quotes 
+function inListToSql(input) {
+  let listItems = input.split(' ')
+  listItems = listItems.map(function(x){return "'" + x + "'"}) 
+  return "(" + listItems.join(', ') + ")"
+}
 
 //todo: in list, not in list, contains all, range 
 
