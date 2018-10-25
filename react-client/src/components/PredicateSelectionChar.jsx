@@ -15,11 +15,20 @@ const options = [
 
 
 function PredicateSelectionChar(props) {
+  const customStyles = {
+    control: (base) => ({
+      ...base,
+      height: '50px'
+    }),
+  };  
+
   return (
-    <div className='select-style'>
+    <div className='select-style input'>
       <Select
-        onChange={event => {props.updateState(event, props.id)}}
+        onChange={event => {props.updateQuery(event, props.id)}}
         options={options}
+        defaultValue={options[0]}
+        styles={customStyles}
       />
     </div>
   );

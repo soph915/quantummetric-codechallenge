@@ -12,8 +12,20 @@ header {
   justify-content: flex-start;
   padding: 10px;
   align-items: center; 
-  font-weight: 800
+  font-weight: 800;
+  font-size: 20px;
+  border-bottom :2px solid #ccc; 
 }  
+
+.builder-wrap {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #ECEDED; 
+}
 
 .builder-body{
   width: 90vw;
@@ -26,27 +38,15 @@ header {
 
 .query-row {
   width: 95vw;
+  height: 60px;
   display: flex;
   justify-content: flex-start;
-  align-items: center; }
+  align-items: flex-start; 
 }
 
-.query-row input {
-  width: 150px;
-  height: 25px;
-  padding: 5px;
-  border-radius: 4px;
+.row-item{
+  display:inline-block;
 }
-
-.event {
-  width: 200px;
-  margin-right: 20px;
-  text-align: left; }
-
-.predicate {
-  width: 200px;
-  margin-right: 20px;
-  text-align: left; }
 
 .and-button button {
     margin-top:30px;
@@ -63,18 +63,29 @@ header {
 .delete-button button {
   background: white;
   color: gray;
-  width: 20px;
-  height: 20px;
-  border: solid 1px white;
+  width: 45px;
+  height: 48px;
+  border:1px solid #ccc;
   border-radius:3px;
-  font-size: 10pt;
+  font-size: 15pt;
+  margin-top: 8px;
+}
+
+input{
+  font-size: 11pt;
+  width: 160px;
+  height: 45px;
+  border:1px solid #ccc; 
+  border-radius: 5px;
+  margin-top: 8px;
 }
 
 .select-style {
-  width:140px;
-  height: 30px;
+  width:250px;
+  font-size: 11pt;
+  margin: 8px;
+  font: gray;
 }
-
 
 .search-button {
     width: 95vw;
@@ -90,4 +101,12 @@ header {
     border: solid 1px #66C5E8;
     border-radius: 3px;
     font-size: 10pt;
+    margin-top: 10px;
   }
+
+  .inline {
+    display: inline
+  }
+
+
+  

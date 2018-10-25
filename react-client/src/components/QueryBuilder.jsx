@@ -13,8 +13,9 @@ class QueryBuilder extends React.Component {
     }
     this.addRow = this.addRow.bind(this)
     this.executeQuery = this.executeQuery.bind(this) 
-    this.updateState = this.updateState.bind(this)  
-    this.removeFromQueries= this.removeFromQueries.bind(this)     
+    this.updateQuery = this.updateQuery.bind(this)  
+    this.removeFromQueries= this.removeFromQueries.bind(this)   
+    this.updateRangeInput= this.updateRangeInput.bind(this)  
   }
 
   addRow(){
@@ -43,7 +44,7 @@ class QueryBuilder extends React.Component {
 
   }
 
-  updateState(event, id) {
+  updateQuery(event, id) {
     let currentQueries = this.state.queries.slice();
     if (!currentQueries[id]) {
       currentQueries[id] = {}
@@ -56,12 +57,27 @@ class QueryBuilder extends React.Component {
     this.setState({queries:currentQueries})
   }
 
+  updateRangeInput(event, id, index) {
+    let currentQueries = this.state.queries.slice();
+    if (!currentQueries[id]) {
+      currentQueries[id] = {}
+    }
+    if (!currentQueries[id][event.target.name]) {
+      currentQueries[id][event.target.name]= []
+      console.log('hi on 67')
+      currentQueries[id][event.target.name][index]= event.target.value;
+    } else {
+      currentQueries[id][event.target.name][index]= event.target.value;
+    }
+    this.setState({queries:currentQueries})
+  }
+
   render(){
 
     let queryList = [];
 
     for (let i=0; i<this.state.rows; i++) {
-      queryList.push(<QueryRow key={i} id={i} query={this.state.queries} updateState={this.updateState} removeFromQueries={this.removeFromQueries}/>)
+      queryList.push(<QueryRow key={i} id={i} query={this.state.queries} updateQuery={this.updateQuery} removeFromQueries={this.removeFromQueries} rows={this.state.rows} updateRangeInput={this.updateRangeInput}/>)
     }
 
     return (

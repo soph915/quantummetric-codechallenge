@@ -9,14 +9,20 @@ const options = [
   { value: 'greater_than_or_equal', label: 'greater than or equal', name:'predicate'  },
 ];
 
-//todo: range 
-
 function predicateSelectionInt(props) {
+  const customStyles = {
+    control: (base) => ({
+      ...base,
+      height: '50px', 
+    }),
+  };  
+
   return (
-    <div className='select-style'>
+    <div className='select-style input'>
       <Select
-        onChange={event => {props.updateState(event, props.id)}}
+        onChange={event => {props.updateQuery(event, props.id); props.updateEvent(event);}}
         options={options}
+        styles={customStyles}
       />
     </div>
   );

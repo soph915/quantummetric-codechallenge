@@ -12,7 +12,7 @@ var sqlComparisons = {
   does_not_equal: ['!=', numInputToSql],
   in_list: ['IN', inListToSql],
   not_in_list: ['NOT IN', inListToSql],
-  range: 'BETWEEN',
+  range: ['BETWEEN', rangeToSql]
 }
 
 function startsWithToSql(input) {
@@ -41,7 +41,13 @@ function inListToSql(input) {
   return "(" + listItems.join(', ') + ")"
 }
 
-//todo: in list, not in list, contains all, range 
+function rangeToSql(input) {
+  return Number(input[0]) +  ' AND ' + Number(input[1])
+}
+
+//todo: contains all
+
+//todo: if first row is deleted, remove AND 
 
 
 function convertToSql(queries) {
